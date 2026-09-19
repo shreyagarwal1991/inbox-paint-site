@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Inbox Paint color-codes Gmail with simple visual rules. Point at an email and click “Color emails like this…”. Private, fast, and processed locally.">
+<title>Inbox Paint: color rules for Gmail</title>
+<meta property="og:title" content="Inbox Paint: color rules for Gmail">
+<meta property="og:description" content="Make important email impossible to miss. Rules run in your browser and never change your mail.">
+<meta property="og:image" content="https://inboxpaint.enuf.ai/media/inbox-paint-poster.jpg">
+<meta property="og:video" content="https://inboxpaint.enuf.ai/media/inbox-paint.mp4">
+<style>
+  :root { --bg: #ffffff; --text: #1f1f1f; --muted: #5f6368; --accent: #6d3fd1; --card: #f5f1fd; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #1f1f1f; --text: #e8eaed; --muted: #9aa0a6; --accent: #c3a6ff; --card: #2b2833; } }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 "Segoe UI", Roboto, system-ui, Arial, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 40px 16px 64px; }
+  h1 { font-size: 32px; line-height: 1.2; margin: 0 0 8px; }
+  h2 { font-size: 20px; margin: 36px 0 8px; }
+  .lead { font-size: 18px; color: var(--muted); margin: 0 0 24px; }
+  .card { background: var(--card); border-radius: 12px; padding: 16px 20px; }
+  a { color: var(--accent); }
+  dt { font-weight: 600; margin-top: 16px; }
+  dd { margin: 4px 0 0; }
+  footer { margin-top: 48px; color: var(--muted); font-size: 14px; }
+  /* The video is wider than the text column. */
+  .demo { width: min(1040px, calc(100vw - 32px)); margin: 8px 0 32px 50%; transform: translateX(-50%); }
+  .demo video { display: block; width: 100%; height: auto; border-radius: 14px; background: #f3effd;
+    box-shadow: 0 18px 50px rgba(32,33,36,.20), 0 2px 8px rgba(32,33,36,.10); }
+  .demo figcaption { margin-top: 10px; text-align: center; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Inbox Paint</h1>
+  <p class="lead">Color rules for Gmail. Point at an email, click <strong>Color emails like this…</strong>, and every similar email stands out: clients in blue, invoices in orange, unread in red.</p>
+
+  <figure class="demo">
+    <video id="demo" src="media/inbox-paint.mp4" poster="media/inbox-paint-poster.jpg" width="1920" height="1080"
+      controls muted loop playsinline preload="metadata"
+      aria-label="Inbox Paint in action: a VIP rule, teaching a rule by example, why an email has its color, and the dark theme"></video>
+    <figcaption>See it in action. The mail shown is made up. No sound.</figcaption>
+  </figure>
+  <script>
+    // Plays on its own, muted, unless the visitor prefers reduced motion.
+    const demo = document.getElementById("demo");
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      demo.autoplay = true;
+      demo.play().catch(() => {});
+    }
+  </script>
+
+  <div class="card">
+    <strong>Need help?</strong> Email <a href="mailto:support@enuf.ai">support@enuf.ai</a>. Tell us your Chrome version and which Gmail view you were using. Please don't send screenshots of private mail. The diagnostics in Settings are safe to share: they hold counts only.
+  </div>
+
+  <h2>What it does</h2>
+  <ul>
+    <li>Teach by example: hover an email, click the Inbox Paint button, pick what makes it special (sender, domain, a subject word, a label), and create the rule. The preview counts the matches first.</li>
+    <li>Three looks: Accent (a thin colored edge), Soft (a light tint) and Strong (a full color with readable text).</li>
+    <li>Every colored row can tell you why: the rule that colored it, with Edit, Turn off, or make an exception for this sender or conversation.</li>
+    <li>Recipes for VIP senders, work domains, money, travel, newsletters and unread mail.</li>
+    <li>Gmail keeps working exactly as before: opening, selecting, starring and hover actions. Keys you type in the Inbox Paint panel never trigger Gmail shortcuts.</li>
+    <li>No sign-in, no Gmail API, no server. Everything runs in your browser, and your mailbox is never changed.</li>
+  </ul>
+
+  <h2>Common questions</h2>
+  <dl>
+    <dt>Colors are not showing.</dt>
+    <dd>Open Inbox Paint from the toolbar. The status panel says whether it is working. If you installed it while Gmail was open, reload that Gmail tab once.</dd>
+    <dt>Some emails are not colored.</dt>
+    <dd>Rules run top to bottom and the first match wins. The rule editor shows how many visible conversations match, and how many a higher rule takes instead, with a one-click “Put this rule above”.</dd>
+    <dt>It says “Gmail layout not recognized”.</dt>
+    <dd>Google changed Gmail and Inbox Paint can't read the list safely, so it stopped coloring instead of guessing. Gmail looks as normal. An update will fix it.</dd>
+    <dt>I want Gmail's own look back.</dt>
+    <dd>Use the switch at the top of the Inbox Paint window. Gmail looks exactly as before.</dd>
+    <dt>Does it read or send my email?</dt>
+    <dd>It reads what the Gmail list already shows (sender, subject, preview, labels, unread and starred), only on mail.google.com, only to decide colors. It never opens emails and nothing leaves your browser. See the <a href="privacy.html">privacy policy</a>.</dd>
+    <dt>Is it free?</dt>
+    <dd>Everything is unlocked during early access. If a paid plan comes later, early users keep what they have.</dd>
+  </dl>
+
+  <footer>
+    <p><a href="privacy.html">Privacy policy</a> · <a href="mailto:support@enuf.ai">support@enuf.ai</a></p>
+    <p>Inbox Paint is an independent extension. It is not affiliated with or endorsed by Google. Gmail is a trademark of Google LLC.</p>
+  </footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Inbox Paint privacy policy</title>
+<style>
+  :root { --bg: #ffffff; --text: #1f1f1f; --muted: #5f6368; --accent: #6d3fd1; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #1f1f1f; --text: #e8eaed; --muted: #9aa0a6; --accent: #c3a6ff; } }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 "Segoe UI", Roboto, system-ui, Arial, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 40px 16px 64px; }
+  h1 { font-size: 30px; line-height: 1.2; margin: 0 0 4px; }
+  h2 { font-size: 19px; margin: 32px 0 8px; }
+  .muted { color: var(--muted); }
+  a { color: var(--accent); }
+  code { font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <p><a href="./">← Inbox Paint</a></p>
+  <h1>Inbox Paint privacy policy</h1>
+  <p class="muted">Last updated: 18 September 2026</p>
+
+  <p>Inbox Paint is a Chrome extension that colors email rows in Gmail (mail.google.com) based on rules you create. The short version: everything stays in your browser, and your email is never changed.</p>
+
+  <h2>What the extension reads</h2>
+  <p>To decide colors, Inbox Paint reads what Gmail already shows in its email list:</p>
+  <ul>
+    <li>the sender's name and address</li>
+    <li>the subject and the preview text</li>
+    <li>label names</li>
+    <li>whether an email is unread or starred</li>
+    <li>Gmail's id for each conversation</li>
+  </ul>
+  <p>It also reads your own address from Gmail's account button, so a rule never treats you as the sender of a thread you replied to. It reads all of this only on mail.google.com, only in your browser, and only to apply your color rules. It does not open emails and does not read email bodies.</p>
+
+  <h2>What the extension stores</h2>
+  <ul>
+    <li><strong>Your rules, color palette and preferences.</strong> Stored with <code>chrome.storage.sync</code>, so Chrome can sync them between your own signed-in Chrome browsers. If Chrome sync is full or unavailable, they are stored on your device only. A rule contains what you typed or picked for it (for example a sender address or a word). “Except this conversation” stores Gmail's id for that conversation, not its subject. Nothing else from your email is stored.</li>
+    <li><strong>Recently used custom colors.</strong> On this device only.</li>
+    <li><strong>An install record.</strong> The date the extension was first installed and its version, on your device and in your own Chrome profile's sync storage. It keeps early users' access to features if paid plans are introduced later. It contains no personal information.</li>
+  </ul>
+
+  <h2>What the extension sends</h2>
+  <p>Nothing. The extension makes no network requests. It has no server, no analytics, no advertising, no tracking and no third-party code. Email content, addresses, labels and rules never leave your browser. Settings you choose to export are saved as a file on your computer.</p>
+
+  <h2>What the extension changes</h2>
+  <p>Only how rows look on mail.google.com, inside your browser. It never modifies your mailbox: it doesn't open, move, label, archive, delete, mark read or unread, star or send email. It does not use the Gmail API and never asks you to sign in. Turning Inbox Paint off or removing it restores Gmail's own appearance.</p>
+
+  <h2>Permissions</h2>
+  <ul>
+    <li><code>storage</code>: to save your rules, palette and preferences.</li>
+    <li>Access to <code>https://mail.google.com/*</code>: to read the email list on the page and color its rows. The extension does not run on any other site.</li>
+  </ul>
+
+  <h2>Several Google accounts</h2>
+  <p>Your rules apply to every Gmail account you open in the same Chrome profile. What Inbox Paint reads from one account's list is used only on that page and never stored, so nothing passes from one account to another.</p>
+
+  <h2>Diagnostics</h2>
+  <p>Diagnostics you choose to copy from Settings contain counts, versions and on/off flags only. They never contain senders, addresses, subjects, previews or label names.</p>
+
+  <h2>Selling and sharing data</h2>
+  <p>We do not sell, share or transfer any user data. We do not use data for advertising, creditworthiness or any purpose other than coloring your inbox.</p>
+
+  <h2>Removing your data</h2>
+  <p>Settings → <strong>Reset everything</strong> deletes your rules, palette and preferences. Uninstalling the extension removes everything it stored on your device. Chrome may keep synced settings in your Chrome sync data until you reset them or clear Chrome sync.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, the new version will be posted at this address with a new date. A future feature that needs any data to leave your browser will be off by default and will ask for your permission first.</p>
+
+  <h2>Contact</h2>
+  <p>Questions: <a href="mailto:support@enuf.ai">support@enuf.ai</a></p>
+</main>
+</body>
+</html>
